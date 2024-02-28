@@ -53,7 +53,7 @@
                         </div>
                         <div class="links">
                             <v-hover v-slot:default="{ isHovering, props }">
-                                <a href="https://github.com/NgThePhong0608/portfolio" target="_blank">
+                                <a href="https://github.com/NgThePhong0608/Simple-Movie-App" target="_blank">
                                     <v-btn class="link-btn" v-bind="props" append-icon="mdi-github" variant="Text" :color="isHovering ? '#147efb'
                                         : '#2d2e32'">Code</v-btn>
                                 </a>
