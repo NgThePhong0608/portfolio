@@ -8,15 +8,7 @@
                 Each project is a unique piece of development 🧩
             </p>
             <div id="projects-grid">
-                <v-sheet class="project-showcase" elevation="4" rounded="lg">
-                    <v-sheet class="project-windows-container">
-                        <v-window class="project-windows elevation-2 rounded-lg" v-model="portfolioWindow"
-                            show-arrows="hover">
-                            <v-window-item v-for="(image, index) in portolioWindowImages" :key="index">
-                                <v-img class="project-image bg-gray" :src="image.path" :aspect-ratio="16 / 9" />
-                            </v-window-item>
-                        </v-window>
-                    </v-sheet>
+                <v-sheet class="" elevation="4" rounded="lg">
                     <div class="project-description">
                         <h3>Portfolio <span class="project-date">(February 2024)</span></h3>
                         <p>A viewable portfolio to display my personal projects as well as real projects. The website's
@@ -35,8 +27,142 @@
                             </v-hover>
                             <v-hover v-slot:default="{ isHovering, props }">
                                 <a href="https://www.stefantopalovic.com/" target="_blank">
+                                    <v-btn class="link-btn" v-bind="props" append-icon="mdi-television-classic"
+                                        variant="Text" :color="isHovering ? '#147efb'
+                                            : '#2d2e32'">Live demo</v-btn>
+                                </a>
+                            </v-hover>
+                            <v-hover v-slot:default="{ isHovering, props }">
+                                <a href="https://www.stefantopalovic.com/" target="_blank">
                                     <v-btn class="link-btn" v-bind="props" append-icon="mdi-palette" variant="Text" :color="isHovering ? '#147efb'
                                         : '#2d2e32'">Design</v-btn>
+                                </a>
+                            </v-hover>
+                        </div>
+                    </div>
+                </v-sheet>
+                <v-sheet class="" elevation="4" rounded="lg">
+                    <div class="project-description">
+                        <h3>Simple Movie App</h3>
+                        <p>A viewable portfolio to display my personal projects as well as real projects. The website's
+                            design was BASED on Stefan Topalovic's React portfolio. It can adapt to any screensize while
+                            still remain stylish throughout. It is built on Vue and SCSS</p>
+                        <div class="stack">
+                            <v-sheet class="stack-item rounded-sm" elevation="3">Vue</v-sheet>
+                            <v-sheet class="stack-item rounded-sm" elevation="3">SCSS</v-sheet>
+                        </div>
+                        <div class="links">
+                            <v-hover v-slot:default="{ isHovering, props }">
+                                <a href="https://github.com/NgThePhong0608/portfolio" target="_blank">
+                                    <v-btn class="link-btn" v-bind="props" append-icon="mdi-github" variant="Text" :color="isHovering ? '#147efb'
+                                        : '#2d2e32'">Code</v-btn>
+                                </a>
+                            </v-hover>
+                            <v-hover v-slot:default="{ isHovering, props }">
+                                <a href="https://simple-movie-app-ochre.vercel.app/" target="_blank">
+                                    <v-btn class="link-btn" v-bind="props" append-icon="mdi-television-classic"
+                                        variant="Text" :color="isHovering ? '#147efb'
+                                            : '#2d2e32'">Live demo</v-btn>
+                                </a>
+                            </v-hover>
+                        </div>
+                    </div>
+                </v-sheet>
+                <v-sheet class="" elevation="4" rounded="lg">
+                    <div class="project-description">
+                        <h3>Contact Management</h3>
+                        <p>A viewable portfolio to display my personal projects as well as real projects. The website's
+                            design was BASED on Stefan Topalovic's React portfolio. It can adapt to any screensize while
+                            still remain stylish throughout. It is built on Vue and SCSS</p>
+                        <div class="stack">
+                            <v-sheet class="stack-item rounded-sm" elevation="3">Laravel</v-sheet>
+                            <v-sheet class="stack-item rounded-sm" elevation="3">HTML/CSS/JS</v-sheet>
+                        </div>
+                        <div class="links">
+                            <v-hover v-slot:default="{ isHovering, props }">
+                                <a href="https://github.com/NgThePhong0608/Contact-application" target="_blank">
+                                    <v-btn class="link-btn" v-bind="props" append-icon="mdi-github" variant="Text" :color="isHovering ? '#147efb'
+                                        : '#2d2e32'">Code</v-btn>
+                                </a>
+                            </v-hover>
+                        </div>
+                    </div>
+                </v-sheet>
+                <v-sheet class="" elevation="4" rounded="lg">
+                    <div class="project-description">
+                        <h3>Larapics Blog</h3>
+                        <p>A viewable portfolio to display my personal projects as well as real projects. The website's
+                            design was BASED on Stefan Topalovic's React portfolio. It can adapt to any screensize while
+                            still remain stylish throughout. It is built on Vue and SCSS</p>
+                        <div class="stack">
+                            <v-sheet class="stack-item rounded-sm" elevation="3">Laravel</v-sheet>
+                            <v-sheet class="stack-item rounded-sm" elevation="3">HTML/CSS/JS</v-sheet>
+                        </div>
+                        <div class="links">
+                            <v-hover v-slot:default="{ isHovering, props }">
+                                <a href="https://github.com/NgThePhong0608/laravel-picture-blog" target="_blank">
+                                    <v-btn class="link-btn" v-bind="props" append-icon="mdi-github" variant="Text" :color="isHovering ? '#147efb'
+                                        : '#2d2e32'">Code</v-btn>
+                                </a>
+                            </v-hover>
+                        </div>
+                    </div>
+                </v-sheet>
+                <v-sheet class="" elevation="4" rounded="lg">
+                    <div class="project-description">
+                        <h3>Todo Application</h3>
+                        <p>A viewable portfolio to display my personal projects as well as real projects. The website's
+                            design was BASED on Stefan Topalovic's React portfolio. It can adapt to any screensize while
+                            still remain stylish throughout. It is built on Vue and SCSS</p>
+                        <div class="stack">
+                            <v-sheet class="stack-item rounded-sm" elevation="3">Laravel</v-sheet>
+                            <v-sheet class="stack-item rounded-sm" elevation="3">Vue</v-sheet>
+                        </div>
+                        <div class="links">
+                            <v-hover v-slot:default="{ isHovering, props }">
+                                <a href="https://github.com/NgThePhong0608/todo-app-laravel-vuejs" target="_blank">
+                                    <v-btn class="link-btn" v-bind="props" append-icon="mdi-github" variant="Text" :color="isHovering ? '#147efb'
+                                        : '#2d2e32'">Code</v-btn>
+                                </a>
+                            </v-hover>
+                        </div>
+                    </div>
+                </v-sheet>
+                <v-sheet class="" elevation="4" rounded="lg">
+                    <div class="project-description">
+                        <h3>User Management Application</h3>
+                        <p>A viewable portfolio to display my personal projects as well as real projects. The website's
+                            design was BASED on Stefan Topalovic's React portfolio. It can adapt to any screensize while
+                            still remain stylish throughout. It is built on Vue and SCSS</p>
+                        <div class="stack">
+                            <v-sheet class="stack-item rounded-sm" elevation="3">Laravel</v-sheet>
+                            <v-sheet class="stack-item rounded-sm" elevation="3">React</v-sheet>
+                        </div>
+                        <div class="links">
+                            <v-hover v-slot:default="{ isHovering, props }">
+                                <a href="https://github.com/NgThePhong0608/User-management-application" target="_blank">
+                                    <v-btn class="link-btn" v-bind="props" append-icon="mdi-github" variant="Text" :color="isHovering ? '#147efb'
+                                        : '#2d2e32'">Code</v-btn>
+                                </a>
+                            </v-hover>
+                        </div>
+                    </div>
+                </v-sheet>
+                <v-sheet class="" elevation="4" rounded="lg">
+                    <div class="project-description">
+                        <h3>Basic Blog</h3>
+                        <p>A viewable portfolio to display my personal projects as well as real projects. The website's
+                            design was BASED on Stefan Topalovic's React portfolio. It can adapt to any screensize while
+                            still remain stylish throughout. It is built on Vue and SCSS</p>
+                        <div class="stack">
+                            <v-sheet class="stack-item rounded-sm" elevation="3">PHP</v-sheet>
+                            <v-sheet class="stack-item rounded-sm" elevation="3">MySql</v-sheet>
+                        </div>
+                        <div class="links">
+                            <v-hover v-slot:default="{ isHovering, props }">
+                                <a href="https://github.com/NgThePhong0608/basic-forum" target="_blank">
+                                    <v-btn class="link-btn" v-bind="props" append-icon="mdi-github" variant="Text" :color="isHovering ? '#147efb'
+                                        : '#2d2e32'">Code</v-btn>
                                 </a>
                             </v-hover>
                         </div>
