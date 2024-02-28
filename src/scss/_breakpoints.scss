@@ -1,0 +1,9 @@
+$breakpoints: (
+    "lg": 60rem,
+);
+
+@mixin lg {
+    @media (min-width: map-get($breakpoints, "lg")) {
+        @content
+    }
+};
