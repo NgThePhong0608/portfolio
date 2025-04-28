@@ -1,0 +1,386 @@
+@import "tailwindcss";
+
+/* App-specific styles */
+.transition-all {
+    transition-property: all;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    transition-duration: 150ms;
+}
+
+/* Enhanced shadow effects */
+.shadow-sm {
+    --tw-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+    --tw-shadow-colored: 0 1px 2px 0 var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-md {
+    --tw-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1),
+        0 2px 4px -2px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color),
+        0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-xl {
+    --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1),
+        0 8px 10px -6px rgb(0 0 0 / 0.1);
+    --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color),
+        0 8px 10px -6px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
+        var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+/* Glass effect */
+.glass {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* Enhanced hero section */
+.hero-gradient {
+    background: linear-gradient(90deg, #4338ca, #6d28d9, #8b5cf6, #c026d3);
+    background-size: 300% 300%;
+    animation: gradient-animation 15s ease infinite;
+}
+
+@keyframes gradient-animation {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+/* Floating animation */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-15px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* Glow effect */
+.glow {
+    border-radius: 0.5rem;
+    position: relative;
+}
+
+.glow::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(
+        45deg,
+        #ff0000,
+        #ff7300,
+        #fffb00,
+        #48ff00,
+        #00ffd5,
+        #002bff,
+        #7a00ff,
+        #ff00c8,
+        #ff0000
+    );
+    border-radius: 0.6rem;
+    background-size: 400%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    animation: glowing 20s linear infinite;
+}
+
+.glow:hover::before {
+    opacity: 1;
+}
+
+@keyframes glowing {
+    0% {
+        background-position: 0 0;
+    }
+    50% {
+        background-position: 400% 0;
+    }
+    100% {
+        background-position: 0 0;
+    }
+}
+
+/* Skills bar animation */
+.skill-bar {
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-bar::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 0;
+    background-color: rgba(99, 102, 241, 0.3);
+    animation: skill-fill 2s forwards;
+}
+
+@keyframes skill-fill {
+    0% {
+        width: 0;
+    }
+    100% {
+        width: 100%;
+    }
+}
+
+/* Card hover effects */
+.project-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+.project-card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(99, 102, 241, 0.1);
+    transition: transform 0.5s;
+    transform-origin: top;
+    transform: scaleY(0);
+}
+
+.project-card:hover::before {
+    transform: scaleY(1);
+}
+
+/* Text underline effect */
+.fancy-underline {
+    position: relative;
+    display: inline-block;
+}
+
+.fancy-underline::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    transform: scaleX(0);
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: #4f46e5;
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.fancy-underline:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
+}
+
+/* Particles animation */
+.particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: float-up linear infinite;
+    opacity: 0;
+}
+
+@keyframes float-up {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    10% {
+        opacity: 1;
+    }
+    90% {
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+}
+
+/* Typed cursor animation */
+.typed::after {
+    content: "|";
+    display: inline;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    0%,
+    100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Blur effect */
+.blur-3xl {
+    filter: blur(64px);
+}
+
+/* For typed.js animation */
+.typed-cursor {
+    opacity: 1;
+    animation: blink 0.7s infinite;
+}
+
+/* Skill badges */
+.skill-badge {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.skill-badge:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.skill-badge::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0),
+        rgba(255, 255, 255, 0.4),
+        rgba(255, 255, 255, 0)
+    );
+    transition: all 0.5s ease;
+}
+
+.skill-badge:hover::before {
+    left: 100%;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 640px) {
+    /* Adjust typography for mobile */
+    h1,
+    h2,
+    h3 {
+        word-break: break-word;
+        hyphens: auto;
+    }
+
+    /* Adjust spacing for mobile */
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    /* Fix grid layouts for mobile */
+    .grid-cols-2 {
+        grid-template-columns: 1fr;
+    }
+
+    /* Better touch targets for mobile */
+    button,
+    a.inline-block,
+    input,
+    select,
+    textarea {
+        min-height: 44px;
+        min-width: 44px;
+    }
+
+    /* Improve spacing between stacked items */
+    .space-y-mobile > * + * {
+        margin-top: 1rem;
+    }
+
+    /* Fix overflow issues on mobile */
+    .mobile-no-overflow {
+        overflow-x: hidden;
+    }
+
+    /* Full width buttons on mobile */
+    .mobile-full-width {
+        width: 100%;
+        margin-left: 0;
+        margin-right: 0;
+        display: block;
+    }
+
+    /* Adjust long email text */
+    .mobile-truncate {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        max-width: 100%;
+    }
+
+    /* Improve mobile card styling */
+    .project-card {
+        height: auto;
+    }
+
+    /* Better image scaling on mobile */
+    .mobile-img-container {
+        height: auto;
+    }
+
+    /* Fix mobile navigation spacing */
+    .mobile-nav-item {
+        padding: 0.75rem 0;
+    }
+
+    /* Ensure buttons have proper spacing on mobile when stacked */
+    .mobile-btn-stack {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        width: 100%;
+    }
+
+    .mobile-btn-stack > * {
+        width: 100%;
+        margin-left: 0 !important;
+    }
+}
