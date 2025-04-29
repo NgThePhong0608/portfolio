@@ -52,7 +52,7 @@ const Header = () => {
                                     : "-translate-x-4 opacity-0"
                             }`}
                         >
-                            PhongNT
+                            Nguyen The Phong
                         </a>
                     </div>
 
