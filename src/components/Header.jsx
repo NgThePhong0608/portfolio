@@ -52,7 +52,7 @@ const Header = () => {
                                     : "-translate-x-4 opacity-0"
                             }`}
                         >
-                            Portfolio
+                            PhongNT
                         </a>
                     </div>
 
@@ -83,7 +83,7 @@ const Header = () => {
                             Experience
                         </a>
                         <a
-                            href="#projects"
+                            href="#professional-projects"
                             className="text-gray-700 hover:text-indigo-600 font-medium transition-colors duration-300"
                         >
                             Projects

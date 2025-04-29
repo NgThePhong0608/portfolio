@@ -9,7 +9,7 @@ const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-start">
                     <div className="mb-8 md:mb-0 w-full md:w-auto text-left">
                         <a href="#" className="text-2xl font-bold text-white">
-                            Portfolio
+                            Nguyen The Phong
                         </a>
                         <p className="mt-2 text-gray-400 max-w-md">
                             A passionate web developer focused on creating
@@ -80,9 +80,11 @@ const Footer = () => {
                             </h3>
                             <div className="flex space-x-4 justify-start">
                                 <a
-                                    href="#"
+                                    href="https://www.facebook.com/phong.nguyenthe0608"
                                     className="text-white hover:text-gray-400 transition-all p-2 pl-0"
                                     aria-label="Facebook"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     <svg
                                         className="h-6 w-6"
@@ -93,9 +95,11 @@ const Footer = () => {
                                     </svg>
                                 </a>
                                 <a
-                                    href="#"
+                                    href="https://www.linkedin.com/in/ngthephong0608/"
                                     className="text-white hover:text-gray-400 transition-all p-2"
                                     aria-label="LinkedIn"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                 >
                                     <svg
                                         className="h-6 w-6"
@@ -106,7 +110,9 @@ const Footer = () => {
                                     </svg>
                                 </a>
                                 <a
-                                    href="#"
+                                    href="https://github.com/NgThePhong0608"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-white hover:text-gray-400 transition-all p-2"
                                     aria-label="GitHub"
                                 >
@@ -119,7 +125,9 @@ const Footer = () => {
                                     </svg>
                                 </a>
                                 <a
-                                    href="#"
+                                    href="https://www.instagram.com/ngthphong_0608/"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
                                     className="text-white hover:text-gray-400 transition-all p-2"
                                     aria-label="Instagram"
                                 >
@@ -138,7 +146,7 @@ const Footer = () => {
 
                 <div className="border-t border-gray-800 mt-10 pt-6 text-left">
                     <p className="text-gray-400 text-sm">
-                        &copy; {currentYear} Your Name. All rights reserved.
+                        &copy; {currentYear} PhongNT. All rights reserved.
                     </p>
                 </div>
             </div>

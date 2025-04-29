@@ -24,42 +24,69 @@ const Experience = () => {
 
     const experiences = [
         {
-            company: "Tech Innovations Inc.",
-            title: "Senior Full Stack Developer",
-            period: "Jan 2022 - Present",
-            description:
-                "Leading development of enterprise-level applications using Laravel and Vue.js. Implemented CI/CD pipelines that reduced deployment time by 40%. Mentored junior developers and conducted code reviews to maintain high code quality standards.",
-            technologies: ["Laravel", "Vue.js", "AWS", "Docker", "MySQL"],
+            company: "CodLUCK Technology ., JSC",
+            address: "Duy Tan, Cau Giay, Hanoi",
+            title: "Intern Web Developer",
+            period: "Oct 2022 - Jun 2023",
+            description: "",
+            technologies: [
+                "Laravel",
+                "Vue.js",
+                "MySQL",
+                "Bootstrap",
+                "RestfulAPI",
+                "Git",
+            ],
             achievements: [
-                "Redesigned the authentication system using Laravel Sanctum, improving security and reducing login issues by 90%",
-                "Implemented real-time notifications using Laravel WebSockets, increasing user engagement by 35%",
-                "Optimized database queries that improved application performance by 60%",
+                "Implemented backend functionalities using Laravel, including user authentication, database management, and restful API development.",
+                "Contributed to the project’s success by delivering high-quality code, resolving issues promptly, and ensuring smooth communication within the team.",
             ],
         },
         {
-            company: "WebSolutions Co.",
-            title: "Backend Developer",
-            period: "Mar 2020 - Dec 2021",
-            description:
-                "Developed and maintained RESTful APIs using Laravel for multiple client applications. Worked closely with frontend developers to ensure seamless integration. Implemented comprehensive testing strategies that improved code reliability.",
-            technologies: ["PHP", "Laravel", "MySQL", "Redis", "Git"],
-            achievements: [
-                "Developed a customized CMS that reduced content update time by 75%",
-                "Implemented Redis caching that improved API response times by 65%",
-                "Created an automated testing suite that caught 40% more bugs before production",
-            ],
-        },
-        {
-            company: "Digital Creations",
+            company: "Kaopiz Software Co., Ltd",
+            address: "To Huu, Nam Tu Liem, Hanoi",
             title: "Web Developer",
-            period: "Jun 2018 - Feb 2020",
+            period: "Sep 2023 - Mar 2024",
             description:
-                "Developed responsive websites and e-commerce solutions for clients across various industries. Collaborated with designers to implement pixel-perfect UIs. Maintained and updated existing client websites.",
-            technologies: ["PHP", "JavaScript", "Bootstrap", "jQuery", "MySQL"],
+                "Developed and maintained CRM system for a client in the center management like school, kindergarten, etc. Implemented features such as user authentication, database management, and MVC architecture.",
+            technologies: [
+                "PHP",
+                "Laravel",
+                "MySQL",
+                "Bootstrap",
+                "MVC",
+                "Git",
+            ],
             achievements: [
-                "Migrated 15+ legacy websites to modern tech stacks, improving maintenance efficiency by 50%",
-                "Optimized e-commerce checkout process that increased conversion rates by 25%",
-                "Implemented responsive designs that improved mobile traffic by 40%",
+                "Primarily responsible for developing and maintaining backend functionalities for the ERP application, ensuring system performance and stability.",
+                "Contributed to the project’s success by delivering high-quality code, resolving issues promptly, and ensuring smooth communication within the team.",
+                "Participated in the analysis of business requirements, database design, and the development of RESTful APIs to meet frontend and other system needs.",
+                "Researched and applied new backend technologies and development methodologies to enhance work efficiency.",
+            ],
+        },
+        {
+            company: "Amela Technology JSC",
+            address: "Me Tri, Nam Tu Liem, Hanoi",
+            title: "Web Developer",
+            period: "Apr 2024 - Present",
+            description:
+                "As a Junior Developer, I contribute to the development of diverse web applications, including platforms for booking services, e-learning, and legal technology, primarily focusing on backend development using Laravel.",
+            technologies: [
+                "PHP",
+                "Laravel",
+                "MySQL",
+                "PostgreSQL",
+                "Bootstrap",
+                "jQuery",
+                "RestfulAPI",
+                "MVC",
+                "Git",
+            ],
+            achievements: [
+                "Currently involved in developing and maintaining backend functionalities such as user authentication, database management, and RESTful API development for projects in the booking, e-learning, and legal domains.",
+                "Independently develop and implement key backend features for various projects, including [mention a specific feature if possible, e.g., secure payment gateway integration for the booking platform, progress tracking for the e-learning system, document management for the legal tech application].",
+                "Collaborate with senior developers to design scalable and efficient backend architectures tailored to the specific requirements of booking, e-learning, and legal applications.",
+                "Apply knowledge of database design and API development to create robust and secure backend solutions for different industry needs (booking, education, legal).",
             ],
         },
     ];
@@ -88,7 +115,6 @@ const Experience = () => {
                 </div>
 
                 <div className="relative">
-                    {/* Timeline line */}
                     <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-indigo-100 z-0"></div>
 
                     {experiences.map((exp, index) => (
@@ -100,7 +126,6 @@ const Experience = () => {
                             style={{ transitionDelay: `${index * 0.2}s` }}
                         >
                             <div className="flex flex-col md:flex-row items-center">
-                                {/* Left side content (for even indexes) */}
                                 {index % 2 === 0 ? (
                                     <div className="w-full md:w-1/2 md:pr-12 md:text-right">
                                         <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all glass">
@@ -111,6 +136,9 @@ const Experience = () => {
                                                 <h3 className="text-xl font-bold text-gray-800 mb-1">
                                                     {exp.title}
                                                 </h3>
+                                                <h4 className="text-xl font-bold text-gray-800 mb-1">
+                                                    {exp.address}
+                                                </h4>
                                                 <h4 className="text-lg font-medium text-indigo-600 mb-3">
                                                     {exp.company}
                                                 </h4>
@@ -150,7 +178,6 @@ const Experience = () => {
                                     <div className="hidden md:block w-1/2"></div>
                                 )}
 
-                                {/* Timeline node */}
                                 <div className="hidden md:flex items-center justify-center w-10 h-10 rounded-full bg-indigo-500 border-4 border-white shadow-md absolute left-1/2 transform -translate-x-1/2">
                                     <svg
                                         className="w-4 h-4 text-white"
@@ -166,7 +193,6 @@ const Experience = () => {
                                     </svg>
                                 </div>
 
-                                {/* Right side content (for odd indexes) */}
                                 {index % 2 !== 0 ? (
                                     <div className="w-full md:w-1/2 md:pl-12">
                                         <div className="bg-white p-6 rounded-lg shadow-lg hover:shadow-xl transition-all glass">
@@ -177,6 +203,9 @@ const Experience = () => {
                                                 <h3 className="text-xl font-bold text-gray-800 mb-1">
                                                     {exp.title}
                                                 </h3>
+                                                <h4 className="text-xl font-bold text-gray-800 mb-1">
+                                                    {exp.address}
+                                                </h4>
                                                 <h4 className="text-lg font-medium text-indigo-600 mb-3">
                                                     {exp.company}
                                                 </h4>

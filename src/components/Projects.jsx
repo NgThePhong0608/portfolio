@@ -61,7 +61,7 @@ const Projects = () => {
             id: 1,
             title: "E-commerce Website",
             category: "web",
-            image: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+            image: "/assets/image/projects/ecommerce-1.jpg",
             description:
                 "A fully responsive e-commerce platform with product catalog, shopping cart, and payment integration.",
             technologies: ["React", "Node.js", "MongoDB", "Stripe"],
@@ -69,17 +69,17 @@ const Projects = () => {
             demoMedia: [
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                    url: "/assets/image/projects/ecommerce-1.jpg",
                     caption: "Home page with featured products",
                 },
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                    url: "/assets/image/projects/ecommerce-2.jpg",
                     caption: "Product listing page with filters",
                 },
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                    url: "/assets/image/projects/ecommerce-3.jpg",
                     caption: "Shopping cart with payment options",
                 },
             ],
@@ -88,7 +88,7 @@ const Projects = () => {
             id: 2,
             title: "Task Management App",
             category: "app",
-            image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+            image: "/assets/image/projects/task-1.jpg",
             description:
                 "A productivity app for managing tasks, setting deadlines, and tracking progress.",
             technologies: ["React", "Redux", "Firebase"],
@@ -96,18 +96,18 @@ const Projects = () => {
             demoMedia: [
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1169&q=80",
+                    url: "/assets/image/projects/task-1.jpg",
                     caption: "Dashboard with task overview",
                 },
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80",
+                    url: "/assets/image/projects/task-2.jpg",
                     caption: "Task creation interface",
                 },
                 {
-                    type: "video",
-                    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-                    caption: "Task management workflow demo",
+                    type: "image",
+                    url: "/assets/image/projects/task-3.jpg",
+                    caption: "Task management workflow",
                 },
             ],
         },
@@ -115,7 +115,7 @@ const Projects = () => {
             id: 3,
             title: "Movie Database",
             category: "web",
-            image: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+            image: "/assets/image/projects/movie-1.jpg",
             description:
                 "A web application that fetches and displays movie information from a public API.",
             technologies: ["React", "API Integration", "Tailwind CSS"],
@@ -123,17 +123,17 @@ const Projects = () => {
             demoMedia: [
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1594909122845-11baa439b7bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                    url: "/assets/image/projects/movie-1.jpg",
                     caption: "Movie search interface",
                 },
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1542204637-e67bc7d41e48?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                    url: "/assets/image/projects/movie-2.jpg",
                     caption: "Movie details page with cast information",
                 },
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1159&q=80",
+                    url: "/assets/image/projects/movie-3.jpg",
                     caption: "User watchlist feature",
                 },
             ],
@@ -142,7 +142,7 @@ const Projects = () => {
             id: 4,
             title: "Portfolio Website",
             category: "design",
-            image: "https://images.unsplash.com/photo-1600132806608-231446b2e7af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+            image: "/assets/image/projects/portfolio-1.jpg",
             description:
                 "A modern and responsive portfolio website showcasing projects and skills.",
             technologies: ["React", "Tailwind CSS", "Framer Motion"],
@@ -150,18 +150,18 @@ const Projects = () => {
             demoMedia: [
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1600132806608-231446b2e7af?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                    url: "/assets/image/projects/portfolio-1.jpg",
                     caption: "Home page with animation effects",
                 },
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1541462608143-67571c6738dd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                    url: "/assets/image/projects/portfolio-2.jpg",
                     caption: "Project showcase page",
                 },
                 {
-                    type: "video",
-                    url: "https://www.youtube.com/embed/dQw4w9WgXcQ",
-                    caption: "Portfolio site interactions demo",
+                    type: "image",
+                    url: "/assets/image/projects/portfolio-3.jpg",
+                    caption: "Contact and about sections",
                 },
             ],
         },
@@ -169,7 +169,7 @@ const Projects = () => {
             id: 5,
             title: "Weather Dashboard",
             category: "app",
-            image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+            image: "/assets/image/projects/weather-1.jpg",
             description:
                 "A dashboard that displays current weather and forecasts for multiple locations.",
             technologies: ["JavaScript", "Weather API", "Chart.js"],
@@ -177,17 +177,17 @@ const Projects = () => {
             demoMedia: [
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1592210454359-9043f067919b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80",
+                    url: "/assets/image/projects/weather-1.jpg",
                     caption: "Weather dashboard main view",
                 },
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1580193769210-b8d1c049a7d9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1174&q=80",
+                    url: "/assets/image/projects/weather-2.jpg",
                     caption: "Weekly forecast with data visualization",
                 },
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1557683304-673a23048d34?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1129&q=80",
+                    url: "/assets/image/projects/weather-3.jpg",
                     caption: "Location selection interface",
                 },
             ],
@@ -196,7 +196,7 @@ const Projects = () => {
             id: 6,
             title: "Restaurant Website",
             category: "design",
-            image: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+            image: "/assets/image/projects/restaurant-1.jpg",
             description:
                 "A responsive website for a restaurant with menu, reservation, and contact sections.",
             technologies: ["HTML", "CSS", "JavaScript"],
@@ -204,17 +204,17 @@ const Projects = () => {
             demoMedia: [
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                    url: "/assets/image/projects/restaurant-1.jpg",
                     caption: "Restaurant home page with hero section",
                 },
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1559339352-11d035aa65de?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80",
+                    url: "/assets/image/projects/restaurant-2.jpg",
                     caption: "Menu page with food categories",
                 },
                 {
                     type: "image",
-                    url: "https://images.unsplash.com/photo-1590846406792-0adc7f938f1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1172&q=80",
+                    url: "/assets/image/projects/restaurant-3.jpg",
                     caption: "Reservation system interface",
                 },
             ],
@@ -245,7 +245,7 @@ const Projects = () => {
             <div className="container mx-auto px-4 relative z-10">
                 <div className="text-center mb-12 reveal fade-bottom">
                     <h2 className="text-3xl md:text-4xl font-bold text-gray-800 mb-2">
-                        My <span className="gradient-text">Projects</span>
+                        My <span className="gradient-text">Personal Projects</span>
                     </h2>
                     <div className="w-20 h-1 bg-indigo-500 mx-auto mb-4"></div>
                     <p className="text-gray-600 max-w-2xl mx-auto">
