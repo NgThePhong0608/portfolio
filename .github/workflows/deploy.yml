@@ -3,7 +3,7 @@ name: CI/CD React → EC2
 on:
   push:
     branches:
-      - main
+      - portfolio-v2
 
 jobs:
   build:
