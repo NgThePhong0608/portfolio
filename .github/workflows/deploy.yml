@@ -1,70 +1,69 @@
 name: CI/CD React → EC2
 
 on:
-    push:
-        branches:
-            - portfolio-v2
+  push:
+    branches:
+      - main
 
 jobs:
-    build:
-        name: 🛠 Build React App
-        runs-on: ubuntu-latest
+  build:
+    name: 🛠 Build React App
+    runs-on: ubuntu-latest
 
-        steps:
-            - name: Checkout code
-              uses: actions/checkout@v3
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-            - name: Setup Node.js
-              uses: actions/setup-node@v3
-              with:
-                  node-version: "20" # hoặc version bạn dùng
-                  cache: "npm"
+      - name: Setup Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '20'
+          cache: 'npm'
 
-            - name: Install dependencies
-              run: npm ci
+      - name: Install dependencies
+        run: npm ci
 
-            - name: Run tests
-              run: npm test # nếu không có tests, xoá hoặc comment bước này
+      - name: Run tests
+        run: npm test
 
-            - name: Build app
-              run: npm run build # đảm bảo output vào thư mục build hoặc dist
+      - name: Build app
+        run: npm run build
 
-            # Đánh dấu bước build thành artifact (nếu cần)
-            - name: Upload build artifact
-              uses: actions/upload-artifact@v3
-              with:
-                  name: react-build
-                  path: build # hoặc dist
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: react-build
+          path: build
 
-    deploy:
-        name: 🚀 Deploy to EC2
-        needs: build
-        runs-on: ubuntu-latest
-        if: github.ref == 'refs/heads/main'
+  deploy:
+    name: 🚀 Deploy to EC2
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
 
-        steps:
-            - name: Download build artifact
-              uses: actions/download-artifact@v3
-              with:
-                  name: react-build
-                  path: build
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: react-build
+          path: build
 
-            - name: Setup SSH key
-              uses: webfactory/ssh-agent@v0.8.1
-              with:
-                  ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
+      - name: Setup SSH key
+        uses: webfactory/ssh-agent@v0.8.1
+        with:
+          ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
 
-            - name: Copy files to EC2
-              run: |
-                  rsync -avz --delete \
-                    -e "ssh -o StrictHostKeyChecking=no -p ${{ secrets.EC2_PORT || 22 }}" \
-                    dist/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/portfolio/dist/
+      - name: Copy files to EC2
+        run: |
+          rsync -avz --delete \
+            -e "ssh -o StrictHostKeyChecking=no -p ${{ secrets.EC2_PORT || 22 }}" \
+            build/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/portfolio/dist/
 
-            - name: Restart Nginx on EC2
-              run: |
-                  ssh -o StrictHostKeyChecking=no \
-                    -p ${{ secrets.EC2_PORT || 22 }} \
-                    ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-                      sudo nginx -t
-                      sudo systemctl reload nginx
-                    EOF
+      - name: Restart Nginx on EC2
+        run: |
+          ssh -o StrictHostKeyChecking=no \
+            -p ${{ secrets.EC2_PORT || 22 }} \
+            ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
+              sudo nginx -t
+              sudo systemctl reload nginx
+            EOF
