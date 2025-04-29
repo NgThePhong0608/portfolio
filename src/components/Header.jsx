@@ -45,14 +45,14 @@ const Header = () => {
                 <div className="flex justify-between items-center">
                     <div className="flex items-center">
                         <a
-                            href="#"
+                            href="#home"
                             className={`text-xl font-bold text-indigo-600 transform transition-all duration-300 ${
                                 isMounted
                                     ? "translate-x-0 opacity-100"
                                     : "-translate-x-4 opacity-0"
                             }`}
                         >
-                            Nguyen The Phong
+                            Portfolio
                         </a>
                     </div>
 

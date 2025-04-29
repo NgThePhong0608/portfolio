@@ -3,7 +3,6 @@ import { createRoot } from "react-dom/client";
 import "./index.css";
 import App from "./App.jsx";
 
-// Script to handle the typing animation in the hero section
 document.addEventListener("DOMContentLoaded", () => {
     const typedElement = document.querySelector(".typed");
     const stringsElement = document.querySelector("#typed-strings");
@@ -24,25 +23,23 @@ document.addEventListener("DOMContentLoaded", () => {
                     currentCharIndex - 1
                 );
                 currentCharIndex--;
-                typingSpeed = 50;
+                typingSpeed = 50; // Faster deletion
             } else {
                 typedElement.textContent = currentString.substring(
                     0,
                     currentCharIndex + 1
                 );
                 currentCharIndex++;
-                typingSpeed = 150;
+                typingSpeed = 150; // Slower typing
             }
 
             if (!isDeleting && currentCharIndex === currentString.length) {
-                // Pause at the end of a string
                 isDeleting = true;
-                typingSpeed = 1500;
+                typingSpeed = 1500; // Pause at end of word
             } else if (isDeleting && currentCharIndex === 0) {
                 isDeleting = false;
-                // Move to the next string
                 currentStringIndex = (currentStringIndex + 1) % strings.length;
-                typingSpeed = 500;
+                typingSpeed = 500; // Pause before typing next word
             }
 
             setTimeout(type, typingSpeed);

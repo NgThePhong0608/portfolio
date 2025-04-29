@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 
 const Hero = () => {
     useEffect(() => {
-        // Activate reveal animations
         const reveals = document.querySelectorAll(".reveal");
         const revealElements = () => {
             reveals.forEach((element) => {
@@ -17,9 +16,63 @@ const Hero = () => {
         };
 
         window.addEventListener("scroll", revealElements);
-        revealElements(); // Initial check
+        revealElements();
 
-        return () => window.removeEventListener("scroll", revealElements);
+        // Typing animation
+        const typedElement = document.querySelector(".typed");
+        const stringsElement = document.querySelector("#typed-strings");
+        let typingTimeout;
+
+        if (typedElement && stringsElement) {
+            const strings = stringsElement
+                .getAttribute("data-strings")
+                .split(",");
+            let currentStringIndex = 0;
+            let currentCharIndex = 0;
+            let isDeleting = false;
+            let typingSpeed = 100;
+
+            const type = () => {
+                const currentString = strings[currentStringIndex];
+
+                if (isDeleting) {
+                    typedElement.textContent = currentString.substring(
+                        0,
+                        currentCharIndex - 1
+                    );
+                    currentCharIndex--;
+                    typingSpeed = 50;
+                } else {
+                    typedElement.textContent = currentString.substring(
+                        0,
+                        currentCharIndex + 1
+                    );
+                    currentCharIndex++;
+                    typingSpeed = 150;
+                }
+
+                if (!isDeleting && currentCharIndex === currentString.length) {
+                    isDeleting = true;
+                    typingSpeed = 1500;
+                } else if (isDeleting && currentCharIndex === 0) {
+                    isDeleting = false;
+                    currentStringIndex =
+                        (currentStringIndex + 1) % strings.length;
+                    typingSpeed = 500;
+                }
+
+                typingTimeout = setTimeout(type, typingSpeed);
+            };
+
+            typingTimeout = setTimeout(type, 1000);
+        }
+
+        return () => {
+            window.removeEventListener("scroll", revealElements);
+            if (typingTimeout) {
+                clearTimeout(typingTimeout);
+            }
+        };
     }, []);
 
     return (
@@ -44,7 +97,7 @@ const Hero = () => {
                             <span
                                 id="typed-strings"
                                 className="hidden"
-                                data-strings="Web Developer,UI/UX Designer,Frontend Specialist,Creative Coder"
+                                data-strings="Web Developer, Creative Developer"
                             ></span>
                         </h2>
                         <p className="text-indigo-100 mb-8 max-w-lg reveal fade-bottom">
