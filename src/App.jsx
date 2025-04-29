@@ -23,7 +23,7 @@ function App() {
                 <Skills />
                 <Experience />
                 <ProfessionalProjects />
-                {/* <Projects /> */}
+                <Projects />
                 <Certificates />
                 <Contact />
             </main>
