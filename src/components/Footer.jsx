@@ -146,7 +146,7 @@ const Footer = () => {
 
                 <div className="border-t border-gray-800 mt-10 pt-6 text-left">
                     <p className="text-gray-400 text-sm">
-                        &copy; {currentYear} PhongNT. All rights reserved.
+                        &copy; {currentYear} Nguyen The Phong. All rights reserved.
                     </p>
                 </div>
             </div>
