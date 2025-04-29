@@ -37,6 +37,12 @@ jobs:
         needs: build
         runs-on: ubuntu-latest
         steps:
+            - name: Download build artifact
+              uses: actions/download-artifact@v4
+              with:
+                  name: vite-dist
+                  path: dist
+
             - name: Checkout code
               uses: actions/checkout@v4
 
