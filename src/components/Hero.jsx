@@ -180,12 +180,11 @@ const Hero = () => {
                         </div>
                     </div>
                     <div className="md:w-1/2 flex justify-center md:justify-end">
-                        <div className="w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-4 border-indigo-300 shadow-xl floating reveal fade-left">
+                        <div className="w-64 h-[70%] md:w-80 md:h-[70%] rounded-full overflow-hidden border-4 border-indigo-300 shadow-xl">
                             <img
-                                src="https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
+                                src="/assets/image/projects/me.jpg"
                                 alt="Profile"
                                 className="w-full h-full object-cover"
-                                // Replace with your own image
                             />
                         </div>
                         <div className="absolute top-20 right-10 w-20 h-20 bg-purple-500 rounded-full blur-3xl opacity-20"></div>
@@ -232,9 +231,8 @@ const Hero = () => {
                             height: `${Math.random() * 10 + 5}px`,
                             animationDuration: `${Math.random() * 10 + 5}s`,
                             animationDelay: `${Math.random() * 5}s`,
-                            backgroundColor: `rgba(255, 255, 255, ${
-                                Math.random() * 0.3 + 0.1
-                            })`,
+                            backgroundColor: `rgba(255, 255, 255, ${Math.random() * 0.3 + 0.1
+                                })`,
                         }}
                     ></div>
                 ))}
