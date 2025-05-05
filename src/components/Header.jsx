@@ -1,23 +1,32 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const Header = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [scrollPosition, setScrollPosition] = useState(0);
     const [isMounted, setIsMounted] = useState(false);
 
+    const handleScroll = useCallback(() => {
+        setScrollPosition(window.scrollY);
+    }, []);
+
     useEffect(() => {
         setIsMounted(true);
-
-        const handleScroll = () => {
-            setScrollPosition(window.scrollY);
-        };
-
         window.addEventListener("scroll", handleScroll);
+        return () => window.removeEventListener("scroll", handleScroll);
+    }, [handleScroll]);
 
-        return () => {
-            window.removeEventListener("scroll", handleScroll);
+    // Handle escape key for accessibility
+    useEffect(() => {
+        const handleEscape = (e) => {
+            if (e.key === 'Escape' && isMenuOpen) {
+                setIsMenuOpen(false);
+                document.body.style.overflow = "auto";
+            }
         };
-    }, []);
+
+        document.addEventListener('keydown', handleEscape);
+        return () => document.removeEventListener('keydown', handleEscape);
+    }, [isMenuOpen]);
 
     const toggleMenu = () => {
         setIsMenuOpen(!isMenuOpen);
@@ -37,6 +46,7 @@ const Header = () => {
 
     return (
         <header
+            role="banner"
             className={`bg-white shadow-sm sticky top-0 z-50 transition-all duration-300 ${
                 scrollPosition > 10 ? "py-2" : "py-4"
             }`}
@@ -179,4 +189,4 @@ const Header = () => {
     );
 };
 
-export default Header;
+export default React.memo(Header);
