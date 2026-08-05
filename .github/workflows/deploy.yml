@@ -1,11 +1,20 @@
-name: CI/CD Vite React → EC2
+name: CI - Lint and Build
 
 on:
     push:
-        branches: [portfolio-v2]
+        branches:
+            - portfolio-v2
+    pull_request:
+        branches:
+            - portfolio-v2
+
+concurrency:
+    group: ci-${{ github.workflow }}-${{ github.ref }}
+    cancel-in-progress: true
 
 jobs:
-    deploy:
+    check:
+        name: Check application
         runs-on: ubuntu-latest
 
         steps:
@@ -13,39 +22,16 @@ jobs:
               uses: actions/checkout@v4
 
             - name: Setup Node.js
-              uses: actions/setup-node@v3
+              uses: actions/setup-node@v4
               with:
-                  node-version: "20"
-                  cache: "npm"
+                  node-version: 20
+                  cache: npm
 
             - name: Install dependencies
-              run: npm install
+              run: npm ci
 
-            - name: Build app
-              run: npm run build # sinh ra ./dist
+            - name: Run ESLint
+              run: npm run lint
 
-            - name: Load SSH key
-              uses: webfactory/ssh-agent@v0.9.1
-              with:
-                  ssh-private-key: ${{ secrets.EC2_SSH_KEY }}
-
-            - name: Sync to EC2
-              run: |
-                  rsync -avz --delete \
-                    -e "ssh -o StrictHostKeyChecking=no -p ${{ secrets.EC2_PORT || 22 }}" \
-                    dist/ ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }}:/var/www/html/portfolio/dist/
-            - name: List remote dist dir
-              run: |
-                  ssh -o StrictHostKeyChecking=no \
-                      -p ${{ secrets.EC2_PORT || 22 }} \
-                      ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} \
-                      "ls -R /var/www/html/portfolio/dist"
-
-            - name: Reload Nginx
-              run: |
-                  ssh -o StrictHostKeyChecking=no \
-                      -p ${{ secrets.EC2_PORT || 22 }} \
-                      ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} << 'EOF'
-                    sudo nginx -t
-                    sudo systemctl reload nginx
-                  EOF
+            - name: Build application
+              run: npm run build
