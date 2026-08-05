@@ -1,6 +1,4 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap");
-
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
@@ -13,8 +11,31 @@ body {
         "Helvetica Neue", sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: #f9fafb;
-    color: #1f2937;
+    background-color: #f6f7fb;
+    color: #172033;
+}
+
+:root {
+    --ink: #172033;
+    --ink-soft: #526078;
+    --surface: #ffffff;
+    --surface-muted: #f6f7fb;
+    --brand: #635bff;
+    --brand-deep: #4438ca;
+    --accent: #c084fc;
+    --line: #e4e8f0;
+    --radius-lg: 1.25rem;
+    --shadow-card: 0 20px 50px -28px rgba(31, 41, 75, 0.34);
+}
+
+::selection {
+    background: rgba(99, 91, 255, 0.2);
+    color: var(--ink);
+}
+
+:focus-visible {
+    outline: 3px solid rgba(192, 132, 252, 0.9);
+    outline-offset: 4px;
 }
 
 /* Custom scrollbar */

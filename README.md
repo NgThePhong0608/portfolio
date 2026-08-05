@@ -1,5 +1,43 @@
 # React + Vite
 
+## Test the production build locally with Docker
+
+Build and start the production-like container:
+
+```bash
+docker compose up --build
+```
+
+Open [http://localhost:8080](http://localhost:8080). Stop it with:
+
+```bash
+docker compose down
+```
+
+To run without Compose:
+
+```bash
+docker build -t portfolio-v2 .
+docker run --rm -p 8080:80 portfolio-v2
+```
+
+## Develop with Docker and hot reload
+
+Run the Vite development server with the project directory mounted into the
+container:
+
+```bash
+docker compose -f docker-compose.dev.yml up --build
+```
+
+Open [http://localhost:5173](http://localhost:5173). Changes to files in
+`src/` are detected automatically and Vite HMR updates the browser. Stop it
+with:
+
+```bash
+docker compose -f docker-compose.dev.yml down
+```
+
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
 Currently, two official plugins are available:

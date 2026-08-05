@@ -224,6 +224,8 @@ const Contact = () => {
 
                                 {submitMessage && (
                                     <div
+                                        role="status"
+                                        aria-live="polite"
                                         className={`p-4 mb-6 rounded-md ${
                                             submitMessage.type === "success"
                                                 ? "bg-green-50 text-green-800"

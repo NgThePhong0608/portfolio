@@ -57,7 +57,7 @@ const Footer = () => {
                                 </li>
                                 <li>
                                     <a
-                                        href="#projects"
+                                        href="#professional-projects"
                                         className="text-gray-400 hover:text-white transition-colors block py-1"
                                     >
                                         Projects
