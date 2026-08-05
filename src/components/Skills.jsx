@@ -234,7 +234,7 @@ const Skills = () => {
                         workflows and increase productivity.
                     </p>
                     <a
-                        href="#projects"
+                        href="#professional-projects"
                         className="inline-flex items-center px-6 py-3 bg-indigo-600 text-white font-medium rounded-lg hover:bg-indigo-700 transition-all"
                     >
                         View My Projects

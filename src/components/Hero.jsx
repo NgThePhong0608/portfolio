@@ -23,7 +23,11 @@ const Hero = () => {
         const stringsElement = document.querySelector("#typed-strings");
         let typingTimeout;
 
-        if (typedElement && stringsElement) {
+        const reduceMotion = window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        ).matches;
+
+        if (typedElement && stringsElement && !reduceMotion) {
             const strings = stringsElement
                 .getAttribute("data-strings")
                 .split(",");
@@ -65,6 +69,10 @@ const Hero = () => {
             };
 
             typingTimeout = setTimeout(type, 1000);
+        } else if (typedElement && stringsElement) {
+            typedElement.textContent = stringsElement
+                .getAttribute("data-strings")
+                .split(",")[0];
         }
 
         return () => {
@@ -78,18 +86,18 @@ const Hero = () => {
     return (
         <section
             id="home"
-            className="relative hero-gradient py-20 md:py-32 overflow-hidden"
+            className="hero-section relative hero-gradient py-20 md:py-32 overflow-hidden"
         >
-            <div className="absolute top-0 left-0 w-full h-full bg-[url('https://images.unsplash.com/photo-1614851099175-e5b30eb6f696')] bg-cover bg-center opacity-10"></div>
+            <div className="hero-grid absolute top-0 left-0 w-full h-full"></div>
 
             <div className="container mx-auto px-4 relative z-10">
                 <div className="flex flex-col-reverse md:flex-row items-center justify-between">
-                    <div className="mt-10 md:mt-0 md:w-1/2">
-                        <p className="text-indigo-200 mb-2 reveal fade-bottom">
-                            Welcome to my portfolio
+                    <div className="hero-copy mt-10 md:mt-0 md:w-1/2">
+                        <p className="hero-eyebrow text-indigo-200 mb-2 reveal fade-bottom">
+                            Software developer · Vietnam
                         </p>
                         <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-4 reveal fade-bottom">
-                            Hi, I'm{" "}
+                            Hi, I&apos;m{" "}
                             <span className="name-text">Nguyen The Phong</span>
                         </h1>
                         <h2 className="text-xl md:text-2xl text-indigo-100 mb-6 reveal fade-bottom">
@@ -100,10 +108,11 @@ const Hero = () => {
                                 data-strings="Web Developer, Creative Developer"
                             ></span>
                         </h2>
-                        <p className="text-indigo-100 mb-8 max-w-lg reveal fade-bottom">
-                            I build modern, responsive websites and web
-                            applications with a focus on clean design and
-                            exceptional user experience.
+                        <p className="hero-description text-indigo-100 mb-8 max-w-lg reveal fade-bottom">
+                            I turn complex product ideas into reliable,
+                            user-friendly web experiences—with thoughtful
+                            interfaces on the frontend and dependable systems
+                            behind them.
                         </p>
                         <div className="flex flex-wrap gap-4 reveal fade-bottom">
                             <a
@@ -120,7 +129,7 @@ const Hero = () => {
                             </a>
                         </div>
 
-                        <div className="flex mt-8 gap-4 reveal fade-bottom">
+                        <div className="hero-socials flex mt-8 gap-4 reveal fade-bottom" aria-label="Social links">
                             <a
                                 href="https://www.facebook.com/phong.nguyenthe0608"
                                 target="_blank"
@@ -179,8 +188,8 @@ const Hero = () => {
                             </a>
                         </div>
                     </div>
-                    <div className="md:w-1/2 flex justify-center md:justify-end">
-                        <div className="w-64 h-[70%] md:w-80 md:h-[70%] rounded-full overflow-hidden border-4 border-indigo-300 shadow-xl">
+                    <div className="hero-visual md:w-1/2 flex justify-center md:justify-end">
+                        <div className="hero-portrait w-64 h-[70%] md:w-80 md:h-[70%] rounded-full overflow-hidden border-4 border-indigo-300 shadow-xl">
                             <img
                                 src="/assets/image/projects/me.jpg"
                                 alt="Profile"
